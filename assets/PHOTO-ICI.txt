@@ -1,0 +1,3 @@
+Dépose ici la photo de NZO1, nommée exactement : nzo1.jpg
+(format portrait conseillé, environ 800 x 1000 px).
+Elle remplacera automatiquement le bloc bleu en haut du site.

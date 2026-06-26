@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NZO1 — Coaching Fortnite : analyse du jeu & performance</title>
+  <meta name="description" content="NZO1, coach Fortnite. Des méthodes qui allient l'analyse du jeu et la préparation mentale pour progresser vite et durablement. Séances en visio, premier entretien offert." />
+
+  <!-- Open Graph / partage réseaux -->
+  <meta property="og:title" content="NZO1 — Coaching Fortnite" />
+  <meta property="og:description" content="Analyse du jeu & performance. Réserve ta séance de coaching en visio." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="top">
+    <div class="nav__inner">
+      <a href="#top" class="brand" aria-label="NZO1 — accueil">
+        <span class="brand__mark" aria-hidden="true">N</span>
+        <span class="brand__text">NZO1</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Navigation principale">
+        <a href="#approche">Coaching</a>
+        <a href="#tarifs">Tarifs</a>
+        <a href="#avis">Avis</a>
+        <a href="#reserver" class="btn btn--small">Réserver</a>
+      </nav>
+
+      <button class="nav__burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="nav__mobile" id="mobileMenu" hidden>
+      <a href="#approche">Coaching</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#avis">Avis</a>
+      <a href="#reserver" class="btn">Réserver une séance</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__content reveal">
+          <p class="eyebrow">Coach Fortnite · Analyse &amp; performance</p>
+          <h1 class="hero__title">Passe au niveau<br /><span class="accent">supérieur.</span></h1>
+          <p class="hero__lead">
+            Je te donne des méthodes de travail qui allient l'analyse du jeu et la
+            performance du joueur, pour progresser vite&nbsp;— et durablement.
+          </p>
+          <div class="hero__cta">
+            <a href="#reserver" class="btn btn--lg">Réserver une séance</a>
+            <a href="#contact" class="btn btn--ghost btn--lg">Entretien gratuit</a>
+          </div>
+          <ul class="hero__stats" aria-label="Repères">
+            <li><strong>+8&nbsp;mois</strong><span>de coaching</span></li>
+            <li><strong>Bac+3</strong><span>e-sport</span></li>
+            <li><strong>3&nbsp;ans</strong><span>formé par des pros</span></li>
+          </ul>
+        </div>
+
+        <div class="hero__media reveal">
+          <figure class="hero-photo is-empty" id="heroPhoto">
+            <img src="assets/nzo1.jpg" alt="Portrait de NZO1, coach Fortnite"
+                 onerror="this.closest('.hero-photo').classList.add('is-empty'); this.remove();" />
+            <figcaption class="ph-badge">À MODIFIER&nbsp;: déposer la photo dans <code>assets/nzo1.jpg</code></figcaption>
+          </figure>
+          <div class="hero-card hero-card--game" aria-hidden="true">
+            <span class="dot"></span> Fortnite
+          </div>
+          <div class="hero-card hero-card--visio" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+            Séances en visio
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ À PROPOS ============ -->
+    <section class="about" id="apropos">
+      <div class="container about__inner reveal">
+        <h2 class="section-title">Qui suis-je&nbsp;?</h2>
+        <p class="about__text">
+          Je m'appelle <strong>NZO1</strong> et je coache depuis plus de huit mois.
+          Diplômé d'un <strong>Bac+3 en Business, Management et Performance de l'e-sport</strong>,
+          j'ai été accompagné pendant trois ans par différents coachs professionnels de la
+          scène e-sport. Aujourd'hui, je mets toute cette expérience au service des joueurs
+          qui veulent progresser rapidement&nbsp;— et surtout, durablement.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ APPROCHE — 2 PILIERS ============ -->
+    <section class="approche" id="approche">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow eyebrow--center">Mon approche</p>
+          <h2 class="section-title">Deux leviers, un seul objectif&nbsp;: ta progression</h2>
+        </header>
+
+        <div class="pillars">
+          <article class="pillar reveal">
+            <div class="pillar__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l3-4 3 2 5-7"/></svg>
+            </div>
+            <h3>L'analyse du jeu</h3>
+            <p>
+              Je te propose des plans de jeu et de rotations détaillés, des reviews
+              approfondies de tes parties, ainsi que des routines et des warm-ups adaptés
+              à ton profil pour maximiser ta progression.
+            </p>
+            <ul class="ticks">
+              <li>Plans de jeu &amp; rotations détaillés</li>
+              <li>Reviews approfondies de tes parties</li>
+              <li>Routines &amp; warm-ups personnalisés</li>
+            </ul>
+          </article>
+
+          <article class="pillar reveal">
+            <div class="pillar__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 2.5 1.3 4 2.5 5.2.7.7 1.5 1.5 1.5 2.8v1h6v-1c0-1.3.8-2.1 1.5-2.8C18.7 13 20 11.5 20 9a7 7 0 0 0-7-7Z"/><path d="M9 21h6"/></svg>
+            </div>
+            <h3>La performance &amp; le mental</h3>
+            <p>
+              J'accompagne les joueurs sur tous les aspects qui peuvent limiter leur niveau&nbsp;:
+              gestion du stress, prise de décision, réflexes, confiance en soi et hygiène de vie.
+            </p>
+            <ul class="ticks">
+              <li>Gestion du stress &amp; confiance en soi</li>
+              <li>Prise de décision &amp; réflexes</li>
+              <li>Hygiène de vie &amp; régularité</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="forwho reveal">
+          <div class="forwho__main">
+            <h3>Pour qui&nbsp;?</h3>
+            <p>
+              Pour les joueurs de <strong>15&nbsp;ans et plus</strong> qui veulent progresser
+              rapidement, se préparer pour un tournoi ou viser le haut niveau. Avant chaque
+              compétition, j'analyse ton profil, je te prépare et je te conseille, avec un
+              planning d'entraînement détaillé et des warm-ups spécifiques.
+            </p>
+          </div>
+          <div class="forwho__diff">
+            <p class="forwho__diff-label">Ce qui me différencie</p>
+            <p>
+              J'allie le côté <strong>performance</strong> et la <strong>préparation mentale</strong>
+              au jeu&nbsp;— notamment sur Fortnite.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TARIFS ============ -->
+    <section class="tarifs" id="tarifs">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow eyebrow--center">Mes offres</p>
+          <h2 class="section-title">Choisis la formule qui te correspond</h2>
+          <p class="section-sub">
+            Trois formules pour s'adapter à ton objectif. Et un premier entretien individuel
+            <strong>offert</strong> pour faire connaissance, sans engagement.
+          </p>
+          <p class="ph-note">À MODIFIER&nbsp;: ajuste les prix et le détail de chaque offre ci-dessous.</p>
+        </header>
+
+        <div class="plans">
+          <article class="plan reveal">
+            <h3 class="plan__name">Découverte</h3>
+            <p class="plan__price"><span class="ph-inline">__ €</span></p>
+            <p class="plan__tag">Idéale pour un premier vrai point sur ton niveau.</p>
+            <ul class="ticks">
+              <li>1 séance d'analyse en visio</li>
+              <li>Bilan de ton profil de joueur</li>
+              <li>Premiers axes de progression</li>
+            </ul>
+            <a href="#reserver" class="btn btn--ghost btn--block">Réserver</a>
+          </article>
+
+          <article class="plan plan--featured reveal">
+            <span class="plan__badge">Le plus choisi</span>
+            <h3 class="plan__name">Progression</h3>
+            <p class="plan__price"><span class="ph-inline">__ €</span><small>/ mois</small></p>
+            <p class="plan__tag">Le suivi pour monter en puissance, semaine après semaine.</p>
+            <ul class="ticks">
+              <li>Séances régulières en visio</li>
+              <li>Reviews de parties &amp; plans de jeu</li>
+              <li>Planning d'entraînement personnalisé</li>
+              <li>Suivi mental &amp; performance</li>
+            </ul>
+            <a href="#reserver" class="btn btn--block">Réserver</a>
+          </article>
+
+          <article class="plan reveal">
+            <h3 class="plan__name">Élite</h3>
+            <p class="plan__price"><span class="ph-inline">__ €</span><small>/ mois</small></p>
+            <p class="plan__tag">L'accompagnement complet pour viser la compétition.</p>
+            <ul class="ticks">
+              <li>Suivi rapproché &amp; prioritaire</li>
+              <li>Préparation aux tournois</li>
+              <li>Warm-ups &amp; routines sur mesure</li>
+              <li>Disponibilité renforcée</li>
+            </ul>
+            <a href="#reserver" class="btn btn--ghost btn--block">Réserver</a>
+          </article>
+        </div>
+
+        <div class="free-band reveal">
+          <div>
+            <p class="free-band__label">Tu hésites&nbsp;?</p>
+            <h3 class="free-band__title">Entretien individuel — <span class="accent">Gratuit</span></h3>
+            <p class="free-band__text">On fait le point ensemble sur tes objectifs, sans aucun engagement.</p>
+          </div>
+          <a href="#contact" class="btn btn--lg">Demander mon entretien</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RÉSERVER — PLANNING ============ -->
+    <section class="booking" id="reserver">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow eyebrow--center">Prendre rendez-vous</p>
+          <h2 class="section-title">Réserve ta séance</h2>
+          <p class="section-sub">
+            Choisis un créneau de 30&nbsp;minutes. Les séances se déroulent <strong>en visio</strong>.
+            Ta demande me sera envoyée par e-mail&nbsp;; je te confirme le rendez-vous rapidement.
+          </p>
+        </header>
+
+        <div class="booking__grid reveal">
+          <!-- Étape 1 : jour -->
+          <div class="booking__col">
+            <p class="booking__step">1. Choisis un jour</p>
+            <div class="days" id="days" role="listbox" aria-label="Jours disponibles"></div>
+          </div>
+
+          <!-- Étape 2 : heure -->
+          <div class="booking__col">
+            <p class="booking__step">2. Choisis un créneau</p>
+            <div class="slots" id="slots" role="listbox" aria-label="Créneaux disponibles">
+              <p class="slots__hint">Sélectionne d'abord un jour.</p>
+            </div>
+          </div>
+
+          <!-- Étape 3 : coordonnées -->
+          <div class="booking__col">
+            <p class="booking__step">3. Tes informations</p>
+            <form class="booking__form" id="bookingForm" novalidate>
+              <div class="selected-slot" id="selectedSlot" aria-live="polite">Aucun créneau sélectionné</div>
+
+              <label for="bk-name">Prénom / pseudo</label>
+              <input type="text" id="bk-name" name="name" autocomplete="nickname" required placeholder="Ton pseudo en jeu" />
+
+              <label for="bk-level">Jeu &amp; niveau actuel</label>
+              <input type="text" id="bk-level" name="level" placeholder="Ex. Fortnite — Champion / Arène 4500" />
+
+              <label for="bk-offer">Offre souhaitée</label>
+              <select id="bk-offer" name="offer">
+                <option value="Entretien gratuit">Entretien gratuit (découverte)</option>
+                <option value="Découverte">Découverte</option>
+                <option value="Progression">Progression</option>
+                <option value="Élite">Élite</option>
+              </select>
+
+              <label for="bk-msg">Ton objectif (facultatif)</label>
+              <textarea id="bk-msg" name="message" rows="3" placeholder="Ce que tu veux travailler en priorité…"></textarea>
+
+              <button type="submit" class="btn btn--block" id="bookingSubmit">Confirmer ma demande</button>
+              <p class="booking__alt">
+                Tu préfères Discord&nbsp;? Écris-moi&nbsp;:
+                <button type="button" class="linklike" id="copyDiscord" data-discord="nzoftn">nzoftn</button>
+              </p>
+            </form>
+          </div>
+        </div>
+        <p class="booking__legal">
+          Astuce&nbsp;: ce planning prépare automatiquement un e-mail pré-rempli avec ton créneau.
+          Il pourra être remplacé par un agenda Calendly en temps réel quand tu le souhaites.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ AVIS ============ -->
+    <section class="reviews" id="avis">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow eyebrow--center">Ils en parlent</p>
+          <h2 class="section-title">Ils ont progressé avec moi</h2>
+          <p class="ph-note">À MODIFIER&nbsp;: remplace ces avis par les tiens (prénom + texte).</p>
+        </header>
+
+        <div class="reviews__grid" id="reviewsGrid">
+          <!-- Avis curés (placeholders) -->
+          <figure class="review">
+            <div class="stars" aria-label="5 sur 5">★★★★★</div>
+            <blockquote>« Grâce au suivi de NZO1, j'ai enfin compris mes rotations. J'ai gagné plusieurs paliers en quelques semaines. »</blockquote>
+            <figcaption>— Joueur Fortnite <span class="ph-tag">exemple</span></figcaption>
+          </figure>
+          <figure class="review">
+            <div class="stars" aria-label="5 sur 5">★★★★★</div>
+            <blockquote>« Le travail sur le mental a tout changé. Je gère beaucoup mieux mes fins de partie et mon stress en tournoi. »</blockquote>
+            <figcaption>— Joueur Fortnite <span class="ph-tag">exemple</span></figcaption>
+          </figure>
+          <figure class="review">
+            <div class="stars" aria-label="5 sur 5">★★★★★</div>
+            <blockquote>« Des warm-ups adaptés et un planning clair&nbsp;: je sais enfin quoi travailler à chaque session. »</blockquote>
+            <figcaption>— Joueur Fortnite <span class="ph-tag">exemple</span></figcaption>
+          </figure>
+        </div>
+
+        <!-- Mur d'avis : laisser une note -->
+        <div class="leave-review reveal">
+          <h3>Laisse ton avis</h3>
+          <p class="leave-review__intro">Tu as été coaché par NZO1&nbsp;? Partage ton retour&nbsp;: il s'affichera ci-dessus après validation.</p>
+          <form class="leave-review__form" id="reviewForm" novalidate>
+            <div class="lr-row">
+              <div>
+                <label for="rv-name">Ton prénom / pseudo</label>
+                <input type="text" id="rv-name" name="name" required placeholder="Pseudo" />
+              </div>
+              <div>
+                <label for="rv-rating">Note</label>
+                <select id="rv-rating" name="rating">
+                  <option value="5">★★★★★ (5)</option>
+                  <option value="4">★★★★ (4)</option>
+                  <option value="3">★★★ (3)</option>
+                </select>
+              </div>
+            </div>
+            <label for="rv-text">Ton avis</label>
+            <textarea id="rv-text" name="text" rows="3" required placeholder="Raconte ton expérience…"></textarea>
+            <button type="submit" class="btn">Publier mon avis</button>
+            <p class="leave-review__note" id="reviewNote" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT / CTA FINAL ============ -->
+    <section class="finalcta" id="contact">
+      <div class="container finalcta__inner reveal">
+        <h2>Prêt à passer au niveau supérieur&nbsp;?</h2>
+        <p>Réserve ta séance ou demande ton entretien gratuit. Réponse rapide, par e-mail ou sur Discord.</p>
+        <div class="finalcta__btns">
+          <a href="#reserver" class="btn btn--lg">Réserver une séance</a>
+          <a href="mailto:nzo1.contact@gmail.com?subject=Entretien%20gratuit%20-%20Coaching%20NZO1" class="btn btn--ghost btn--lg">Entretien gratuit par e-mail</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="brand__mark" aria-hidden="true">N</span>
+        <span class="brand__text">NZO1</span>
+        <p>Coach Fortnite — analyse du jeu &amp; performance. Séances en visio.</p>
+      </div>
+
+      <div class="footer__contact">
+        <h4>Me contacter</h4>
+        <a href="mailto:nzo1.contact@gmail.com">nzo1.contact@gmail.com</a>
+        <span>Discord&nbsp;: <strong>nzoftn</strong></span>
+      </div>
+
+      <div class="footer__social">
+        <h4>Réseaux</h4>
+        <div class="socials">
+          <a href="https://x.com/nzo1_" target="_blank" rel="noopener" aria-label="NZO1 sur X">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+          </a>
+          <a href="https://www.twitch.tv/nzo1_" target="_blank" rel="noopener" aria-label="NZO1 sur Twitch">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@nzo.coaching" target="_blank" rel="noopener" aria-label="NZO1 sur YouTube">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@nzo1_ftn" target="_blank" rel="noopener" aria-label="NZO1 sur TikTok">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+          </a>
+          <a href="https://discord.com/users/nzoftn" target="_blank" rel="noopener" aria-label="NZO1 sur Discord">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20.317 4.3698a19.7913 19.7913 0 0 0-4.8851-1.5152.0741.0741 0 0 0-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 0 0-.0785-.037 19.7363 19.7363 0 0 0-4.8852 1.515.0699.0699 0 0 0-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 0 0 .0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 0 0 .0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 0 0-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 0 1-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 0 1 .0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 0 1 .0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 0 1-.0066.1276 12.2986 12.2986 0 0 1-1.873.8914.0766.0766 0 0 0-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 0 0 .0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 0 0 .0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 0 0-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>© <span id="year"></span> NZO1 · Coaching Fortnite</p>
+      <nav class="footer__legal">
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="mentions-legales.html#confidentialite">Confidentialité</a>
+      </nav>
+      <p class="footer__credit">Site réalisé par <a href="https://xn--dcoince-toi-dbb.fr" target="_blank" rel="noopener">décoince-toi</a></p>
+    </div>
+  </footer>
+
+  <!-- ============ BANDEAU COOKIES / RGPD ============ -->
+  <div class="cookie" id="cookie" hidden>
+    <p>
+      Ce site n'utilise que des données strictement nécessaires à son fonctionnement
+      (aucun cookie publicitaire). En continuant, tu acceptes notre
+      <a href="mentions-legales.html#confidentialite">politique de confidentialité</a>.
+    </p>
+    <div class="cookie__btns">
+      <button class="btn btn--small btn--ghost" id="cookieRefuse">Refuser</button>
+      <button class="btn btn--small" id="cookieAccept">Accepter</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
