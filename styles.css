@@ -81,8 +81,8 @@ img { max-width: 100%; display: block; }
   letter-spacing: .05em; color: var(--ink); line-height: 1; transition: color .2s var(--ease);
   display: inline-flex; align-items: baseline; gap: 8px; }
 .brand:hover { color: var(--blue); }
-.brand__pre { font-family: 'Inter', sans-serif; font-weight: 500; font-size: .5em;
-  letter-spacing: .18em; text-transform: uppercase; color: var(--blue); }
+.brand__pre { font-family: 'Inter', sans-serif; font-weight: 600; font-size: .6em;
+  letter-spacing: .02em; color: var(--blue); }
 .brand__mark {
   display: grid; place-items: center; width: 34px; height: 34px;
   background: var(--blue); color: var(--white);
@@ -144,8 +144,8 @@ img { max-width: 100%; display: block; }
 }
 .nav__pill-group { display: flex; align-items: center; gap: 4px; justify-content: space-evenly; }
 .nav__pill a {
-  padding: 9px 17px; border-radius: 999px; font-weight: 500; font-size: 14.5px;
-  color: var(--ink-soft); transition: color .2s, background .2s;
+  padding: 9px 16px; border-radius: 999px; font-weight: 500; font-size: 14.5px;
+  color: var(--ink-soft); white-space: nowrap; transition: color .2s, background .2s;
 }
 .nav__pill a:hover { color: var(--blue); background: rgba(28,43,255,.07); }
 .nav__pill-cta { background: var(--blue); color: var(--white) !important; box-shadow: var(--shadow-sm); }
