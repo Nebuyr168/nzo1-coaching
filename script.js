@@ -35,21 +35,38 @@
     });
   }
 
+  /* ---------- Header compact au scroll ---------- */
+  var header = document.getElementById('top');
+  if (header) {
+    var onScroll = function () {
+      if (window.scrollY > 60) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
   /* =========================================================
      PLANNING DE RÉSERVATION
      ========================================================= */
   var daysEl = document.getElementById('days');
   var slotsEl = document.getElementById('slots');
+  var agendaLabel = document.getElementById('agendaLabel');
   var selectedSlotEl = document.getElementById('selectedSlot');
   var bookingForm = document.getElementById('bookingForm');
+  var modal = document.getElementById('bookingModal');
 
   var DOW = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'];
+  var DOW_SHORT = ['dim.', 'lun.', 'mar.', 'mer.', 'jeu.', 'ven.', 'sam.'];
   var MONTHS = ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.'];
 
   // Créneaux proposés (modifiable par NZO1) — de 14h à 21h30, toutes les 30 min
   var START_HOUR = 14;
   var END_HOUR = 22; // exclusif
   var booking = { day: null, slot: null };
+  var lastFocus = null;
+
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
 
   function buildSlotTimes() {
     var times = [];
@@ -59,13 +76,16 @@
     }
     return times;
   }
-  function pad(n) { return (n < 10 ? '0' : '') + n; }
+
+  function formatDay(d) {
+    return DOW[d.getDay()] + ' ' + d.getDate() + ' ' + MONTHS[d.getMonth()];
+  }
 
   function buildDays() {
     if (!daysEl) return;
     var today = new Date();
     today.setHours(0, 0, 0, 0);
-    var added = 0;
+    var added = 0, first = null;
     for (var i = 0; added < 14 && i < 30; i++) {
       var d = new Date(today);
       d.setDate(today.getDate() + i);
@@ -74,64 +94,70 @@
 
       var btn = document.createElement('button');
       btn.type = 'button';
-      btn.className = 'day';
-      btn.setAttribute('role', 'option');
+      btn.className = 'agenda__day';
+      btn.setAttribute('role', 'tab');
       btn.setAttribute('aria-selected', 'false');
       btn.dataset.iso = d.toISOString();
       btn.innerHTML =
-        '<span class="day__dow">' + DOW[dow] + '</span>' +
-        '<span class="day__date">' + d.getDate() + ' ' + MONTHS[d.getMonth()] + '</span>';
-
-      btn.addEventListener('click', function () {
-        daysEl.querySelectorAll('.day').forEach(function (x) { x.setAttribute('aria-selected', 'false'); });
-        this.setAttribute('aria-selected', 'true');
-        booking.day = new Date(this.dataset.iso);
-        booking.slot = null;
-        renderSlots();
-        updateSelected();
-      });
+        '<span class="agenda__day-dow">' + DOW_SHORT[dow] + '</span>' +
+        '<span class="agenda__day-num">' + d.getDate() + '</span>' +
+        '<span class="agenda__day-mon">' + MONTHS[d.getMonth()] + '</span>';
+      btn.addEventListener('click', function () { selectDay(this); });
       daysEl.appendChild(btn);
+      if (!first) first = btn;
       added++;
     }
+    if (first) selectDay(first); // 1er jour sélectionné par défaut
+  }
+
+  function selectDay(btn) {
+    daysEl.querySelectorAll('.agenda__day').forEach(function (x) { x.setAttribute('aria-selected', 'false'); });
+    btn.setAttribute('aria-selected', 'true');
+    booking.day = new Date(btn.dataset.iso);
+    if (agendaLabel) agendaLabel.textContent = 'Créneaux du ' + formatDay(booking.day);
+    renderSlots();
   }
 
   function renderSlots() {
     if (!slotsEl) return;
     slotsEl.innerHTML = '';
-    var times = buildSlotTimes();
-    times.forEach(function (t) {
+    buildSlotTimes().forEach(function (t) {
       var b = document.createElement('button');
       b.type = 'button';
-      b.className = 'slot';
-      b.textContent = t;
-      b.setAttribute('role', 'option');
-      b.setAttribute('aria-selected', 'false');
-      b.addEventListener('click', function () {
-        slotsEl.querySelectorAll('.slot').forEach(function (x) { x.setAttribute('aria-selected', 'false'); });
-        this.setAttribute('aria-selected', 'true');
-        booking.slot = t;
-        updateSelected();
-      });
+      b.className = 'agenda__slot';
+      b.setAttribute('role', 'listitem');
+      b.innerHTML =
+        '<span class="agenda__slot-time">' + t + '</span>' +
+        '<span class="agenda__slot-tag">Libre</span>';
+      b.addEventListener('click', function () { openModal(t); });
       slotsEl.appendChild(b);
     });
   }
 
-  function formatDay(d) {
-    return DOW[d.getDay()] + ' ' + d.getDate() + ' ' + MONTHS[d.getMonth()];
+  /* ---------- Modale de réservation ---------- */
+  function openModal(slot) {
+    if (!booking.day || !modal) return;
+    booking.slot = slot;
+    if (selectedSlotEl) selectedSlotEl.textContent = formatDay(booking.day) + ' à ' + slot + ' · 30 min · en visio';
+    lastFocus = document.activeElement;
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    var firstField = document.getElementById('bk-name');
+    if (firstField) setTimeout(function () { firstField.focus(); }, 30);
   }
 
-  function updateSelected() {
-    if (!selectedSlotEl) return;
-    if (booking.day && booking.slot) {
-      selectedSlotEl.textContent = 'Créneau choisi : ' + formatDay(booking.day) + ' à ' + booking.slot;
-      selectedSlotEl.classList.add('is-set');
-    } else if (booking.day) {
-      selectedSlotEl.textContent = formatDay(booking.day) + ' — choisis une heure';
-      selectedSlotEl.classList.remove('is-set');
-    } else {
-      selectedSlotEl.textContent = 'Aucun créneau sélectionné';
-      selectedSlotEl.classList.remove('is-set');
-    }
+  function closeModal() {
+    if (!modal || modal.hidden) return;
+    modal.hidden = true;
+    document.body.style.overflow = '';
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  if (modal) {
+    modal.querySelectorAll('[data-close]').forEach(function (el) { el.addEventListener('click', closeModal); });
+    var mClose = document.getElementById('modalClose');
+    if (mClose) mClose.addEventListener('click', closeModal);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
   }
 
   if (bookingForm) {
@@ -143,11 +169,7 @@
       var msg = document.getElementById('bk-msg').value.trim();
 
       if (!name) { document.getElementById('bk-name').focus(); return; }
-      if (!booking.day || !booking.slot) {
-        selectedSlotEl.textContent = 'Choisis d\'abord un jour et une heure.';
-        selectedSlotEl.classList.remove('is-set');
-        return;
-      }
+      if (!booking.day || !booking.slot) { closeModal(); return; }
 
       var when = formatDay(booking.day) + ' à ' + booking.slot;
       var subject = 'Réservation coaching — ' + name + ' (' + when + ')';
@@ -164,6 +186,7 @@
       window.location.href = 'mailto:' + CONTACT_EMAIL +
         '?subject=' + encodeURIComponent(subject) +
         '&body=' + encodeURIComponent(body);
+      closeModal();
     });
   }
 
