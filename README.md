@@ -27,6 +27,10 @@ assets/               → mets ta photo ici : assets/nzo1.jpg
 3. **Les avis** — section « Ils ont progressé avec moi ».
    Remplace les 3 avis « exemple » par tes vrais retours (prénom + texte).
 
+4. **La police des titres (Aero)** — dépose `Aero.ttf` dans `assets/fonts/`.
+   Les titres passent alors automatiquement en Aero. Tant que le fichier est absent,
+   ils s'affichent dans une police de repli (Space Grotesk).
+
 ## Comment ça marche
 
 - **Planning de réservation** : le visiteur choisit un jour (14 jours à l'avance, hors dimanche)

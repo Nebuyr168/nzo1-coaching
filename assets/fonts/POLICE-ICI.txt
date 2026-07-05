@@ -1,0 +1,7 @@
+Dépose ici le fichier de police des titres, nommé exactement : Aero.ttf
+
+Dès qu'il est présent (assets/fonts/Aero.ttf), tous les titres du site
+passent automatiquement en Aero. Tant qu'il est absent, les titres
+utilisent une police de repli (Space Grotesk) — le site reste impeccable.
+
+Astuce : tu peux aussi m'envoyer le fichier Aero.ttf et je l'intègre pour toi.
